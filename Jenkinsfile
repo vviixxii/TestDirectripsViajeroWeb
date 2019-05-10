@@ -12,11 +12,13 @@ pipeline {
         }
         stage('Clean Compile Stage') {
             steps {
+                echo 'Clean Compile Stage'
                 sh 'mvn -Dmaven.test.failure.ignore=true clean compile'
             }
         }
         stage('Package Stage') {
             steps {
+                echo 'Package Stage'
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
             }
         }
