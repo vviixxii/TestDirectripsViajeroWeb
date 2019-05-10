@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout Git') { 
             steps {
-                git poll: true, url: 'https://github.com/vviixxii/pruebas-selenium.git'
+                git poll: true, url: 'https://github.com/vviixxii/TestDirectripsViajeroWeb.git'
             }
         }
         stage('Clean Stage') {
