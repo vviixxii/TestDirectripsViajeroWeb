@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="ViajeroWeb Test Suite" parallel="false">
+	<test name="testngTest">
+	 	<classes> 		
+	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel" />
+	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel2" />
+	 		<class name="directripsViajeroWeb.TCLoginIncorrecto" />
+	 		<class name="directripsViajeroWeb.TCLoginIncorrecto2" />
+	 	</classes>
+ 	</test>
+</suite>
