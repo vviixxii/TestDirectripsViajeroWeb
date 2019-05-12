@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment { 
-        driver = "${env.WORKSPACE}" '/libChrome/chromedriver'
-    }
     tools {
         maven 'Maven361'
         jdk 'Java8'
@@ -20,9 +17,12 @@ pipeline {
             }
         }
         stage('Package Stage') {
+            environment { 
+                CHROME_DRIVER = "${env.WORKSPACE}" '/libChrome/chromedriver'
+            }
             steps {
                 echo 'Package Stage'
-                echo "Chromedriver Path --> ${env.driver}"
+                echo "Chromedriver Path --> ${env.CHROME_DRIVER}"
                 //echo "--> Running ${env.WORKSPACE} <--"
                 //sh 'chmod 400 "${env.WORKSPACE}"/libChrome/chromedriver'                
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
