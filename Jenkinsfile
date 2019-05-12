@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Package Stage'
                 //echo "--> Running ${env.WORKSPACE} <--"
-                sh chmod 400 "${env.WORKSPACE}"/libChrome/chromedriver                
+                sh 'chmod 400 "${env.WORKSPACE}"/libChrome/chromedriver'                
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
             }
         }
