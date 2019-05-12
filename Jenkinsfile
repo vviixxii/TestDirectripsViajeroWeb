@@ -18,13 +18,15 @@ pipeline {
         }
         stage('Package Stage') {
             environment {
-                CHROME_DRIVER = "${env.WORKSPACE}/libChrome/chromedriver"
+                CHROME_LIB = "${env.WORKSPACE}/libChrome"
             }
             steps {
                 echo 'Package Stage'
-                echo "Chromedriver Path --> ${env.CHROME_DRIVER}"
+                echo "Chromedriver Path --> ${env.CHROME_LIB}"
                 //echo "--> Running ${env.WORKSPACE} <--"
-                sh 'chmod +x ${env.CHROME_DRIVER}'                
+                //sh 'chmod +x ${env.CHROME_DRIVER}'     
+                sh 'cd ${env.CHROME_LIB}'
+                sh 'chmod +x chromedriver'
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
             }
         }
