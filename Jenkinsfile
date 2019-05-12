@@ -13,7 +13,8 @@ pipeline {
         stage('Clean Compile Stage') {
             steps {
                 echo 'Clean Compile Stage'
-                sh chmod 400 ${env.JOB_URL}/libChrome/chromedriver
+                echo '${env.JOB_URL} --> Running ${env.BUILD_ID} on ${env.JENKINS_URL}'
+                //sh chmod 400 ${env.JOB_URL}/libChrome/chromedriver
                 sh 'mvn -Dmaven.test.failure.ignore=true clean compile'
             }
         }
