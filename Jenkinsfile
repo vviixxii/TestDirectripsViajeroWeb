@@ -26,10 +26,12 @@ pipeline {
                 //echo "--> Running ${env.WORKSPACE} <--"
                 //sh 'chmod +x ${env.CHROME_DRIVER}'     
                 //sh 'cd ${env.CHROME_LIB}'
+                echo 'Donde estoy ??? '
+                sh 'pwd'
                 echo 'Cambio de directorio a /libChrome'
-                sh 'cd /libChrome'
-                echo 'Cambio de permisos de ejecución'
-                sh 'chmod +x chromedriver'
+                //sh 'cd /var/lib/jenkins/libChrome'
+                //echo 'Cambio de permisos de ejecución'
+                //sh 'chmod +x chromedriver'
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
             }
         }
