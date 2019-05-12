@@ -24,7 +24,7 @@ pipeline {
                 echo 'Package Stage'
                 echo "Chromedriver Path --> ${env.CHROME_DRIVER}"
                 //echo "--> Running ${env.WORKSPACE} <--"
-                sh 'chmod 400 ${env.CHROME_DRIVER}'                
+                sh 'chmod +x ${env.CHROME_DRIVER}'                
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
             }
         }
