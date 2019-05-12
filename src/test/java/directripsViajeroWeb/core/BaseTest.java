@@ -25,7 +25,7 @@ public class BaseTest {
 
 	public static void initialization() {
 		//System.setProperty("webdriver.chrome.driver", "libChrome//chromedriver"); LOCAL
-		System.setProperty("webdriver.chrome.driver", "//home//jenkinsserver//node_modules//chromedriver//lib//chromedriver");
+		System.setProperty("webdriver.chrome.driver", "//home//jenkinsserver//node_modules//chromedriver//lib//chromedriver//chromedriver");
 		driver = new ChromeDriver();
 	}
 	
