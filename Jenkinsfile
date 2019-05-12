@@ -13,15 +13,14 @@ pipeline {
         stage('Clean Compile Stage') {
             steps {
                 echo 'Clean Compile Stage'
-                echo "--> Running ${env.WORKSPACE} <--"
-                //echo "${env.JOB_URL} --> Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                //sh chmod 400 ${env.JOB_URL}/libChrome/chromedriver
                 sh 'mvn -Dmaven.test.failure.ignore=true clean compile'
             }
         }
         stage('Package Stage') {
             steps {
                 echo 'Package Stage'
+                //echo "--> Running ${env.WORKSPACE} <--"
+                sh chmod 400 "${env.WORKSPACE}"/libChrome/chromedriver                
                 sh 'mvn -Dmaven.test.failure.ignore=true package'
             }
         }
