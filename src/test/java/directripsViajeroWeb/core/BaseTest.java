@@ -36,6 +36,7 @@ public class BaseTest {
 		options.addArguments("--no-sandbox"); // Bypass OS security model
 		//driver = new ChromeDriver();
 		driver = new ChromeDriver(options);
+		driver.get("https://google.com");
 	}
 	
 	public void takeSnapShot(String fileWithPath) throws Exception {
