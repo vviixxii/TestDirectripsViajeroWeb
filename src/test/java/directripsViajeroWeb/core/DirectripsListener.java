@@ -196,7 +196,6 @@ public class DirectripsListener extends BaseTest implements ITestListener {
 			for (Integer key : keys) {
 				Throwable throwableStack = this.throwableMap.get(key);
 				StackTraceElement[] elems = throwableStack.getStackTrace();
-				/** TODO */
 				Integer index = 0;
 				for (StackTraceElement ste : elems) {
 					if (index <= NUM_LINES_STACKTRACE) {
