@@ -5,8 +5,8 @@
 	 	<classes> 		
 	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel" />
 	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel2" />
-	 		<class name="directripsViajeroWeb.TCLoginIncorrecto" />
-	 		<class name="directripsViajeroWeb.TCLoginIncorrecto2" />
+	 		<!-- class name="directripsViajeroWeb.TCLoginIncorrecto" />
+	 		<class name="directripsViajeroWeb.TCLoginIncorrecto2" / -->
 	 	</classes>
  	</test>
 </suite>
