@@ -38,7 +38,7 @@ public class TCLoginIncorrecto2 extends BaseTest {
 		driver.quit();
 	}
 
-	@Test(dataProvider = "minimo", dataProviderClass = DirectripsDataProvider.class)
+	@Test(dataProvider = "minimo", dataProviderClass = DirectripsDataProvider.class, enabled = false)
 	public void testLoginIncorrecto2(String... params) throws Exception {
 		try {
 			wait = new WebDriverWait(driver, 30);

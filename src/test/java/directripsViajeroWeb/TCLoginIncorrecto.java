@@ -36,7 +36,7 @@ public class TCLoginIncorrecto extends BaseTest {
 		driver.quit();
 	}
 
-	@Test(dataProvider = "minimo", dataProviderClass = DirectripsDataProvider.class)
+	@Test(dataProvider = "minimo", dataProviderClass = DirectripsDataProvider.class, enabled = false)
 	public void testLoginIncorrecto(String... params) throws Exception {
 		try {
 			driver.get(params[0]);
