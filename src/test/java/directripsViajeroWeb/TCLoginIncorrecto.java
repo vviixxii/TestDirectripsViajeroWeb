@@ -64,7 +64,7 @@ public class TCLoginIncorrecto extends BaseTest {
 			Log.info("Verifica que no salga la exception Nombre de usuario o contraseña incorrectos");
 			Boolean flag = driver.findElements(By.xpath(".//*[@id=\"registro_cuenta\"]")).isEmpty();
 			if (!flag) {
-				WebElement item = driver.findElement(By.xpath(".//*[@id=\"registro_cuenta\"]/div/div/div[1]"));
+				WebElement item = driver.findElement(By.xpath(".//*[@id=\"registro_cuenta\"]/div/div/div"));
 				String msgErr = item.getText();
 				Log.debug("msgErr -> " + msgErr);
 				assertTrue(msgErr.equals("Nombre de usuario o contraseña incorrectos"),
