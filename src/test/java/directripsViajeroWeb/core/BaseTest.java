@@ -25,20 +25,20 @@ public class BaseTest {
 	protected Properties prop = new Properties();
 
 	public static void initialization() {
-		//System.setProperty("webdriver.chrome.driver", "libChrome//chromedriver"); LOCAL
-		System.setProperty("webdriver.chrome.driver", "//home//jenkinsserver//node_modules//chromedriver//lib//chromedriver//chromedriver");
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("start-maximized"); // open Browser in maximized mode
-		options.addArguments("disable-infobars"); // disabling infobars
-		options.addArguments("--disable-extensions"); // disabling extensions
-		options.addArguments("--disable-gpu"); // applicable to windows os only
-		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-		options.addArguments("--no-sandbox"); // Bypass OS security model
-		options.addArguments("--headless");  // No GUI
-		options.setExperimentalOption("useAutomationExtension", false);
-		//driver = new ChromeDriver();
-		driver = new ChromeDriver(options);
-		driver.get("https://google.com");
+		System.setProperty("webdriver.chrome.driver", "libChrome//chromedriver"); //LOCAL
+		driver = new ChromeDriver();
+		
+//		System.setProperty("webdriver.chrome.driver", "//home//jenkinsserver//node_modules//chromedriver//lib//chromedriver//chromedriver");
+//		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("start-maximized"); // open Browser in maximized mode
+//		options.addArguments("disable-infobars"); // disabling infobars
+//		options.addArguments("--disable-extensions"); // disabling extensions
+//		options.addArguments("--disable-gpu"); // applicable to windows os only
+//		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+//		options.addArguments("--no-sandbox"); // Bypass OS security model
+//		options.addArguments("--headless");  // No GUI
+//		options.setExperimentalOption("useAutomationExtension", false);
+//		driver = new ChromeDriver(options);
 	}
 	
 	public void takeSnapShot(String fileWithPath) throws Exception {

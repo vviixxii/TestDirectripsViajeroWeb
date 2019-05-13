@@ -48,12 +48,12 @@ public class TCLoginIncorrecto extends BaseTest {
 			driver.findElement(By.xpath(".//*[@id=\"registro_cuenta\"]/div/div/button[2]")).click();
 
 			Thread.sleep(5000);
-			driver.findElement(By.name("firstname")).click();
-			driver.findElement(By.name("firstname")).clear();
-			driver.findElement(By.name("firstname")).sendKeys(params[1]);
-			driver.findElement(By.name("lastname")).click();
-			driver.findElement(By.name("lastname")).clear();
-			driver.findElement(By.name("lastname")).sendKeys(params[2]);
+			driver.findElement(By.name("email")).click();
+			driver.findElement(By.name("email")).clear();
+			driver.findElement(By.name("email")).sendKeys(params[1]);
+			driver.findElement(By.name("password")).click();
+			driver.findElement(By.name("password")).clear();
+			driver.findElement(By.name("password")).sendKeys(params[2]);
 			Thread.sleep(5000);
 
 			Log.info("Presiona boton iniciar sesion nuevamente");

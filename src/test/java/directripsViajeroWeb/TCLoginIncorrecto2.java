@@ -53,8 +53,8 @@ public class TCLoginIncorrecto2 extends BaseTest {
 					.visibilityOfElementLocated(By.xpath(".//*[@id=\"registro_cuenta\"]/div/div/button[2]"))).click();
 
 			Thread.sleep(5000);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname"))).sendKeys(params[1]);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("lastname"))).sendKeys(params[2]);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email"))).sendKeys(params[1]);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("password"))).sendKeys(params[2]);
 
 			Thread.sleep(5000);
 			Log.info("Presiona boton iniciar sesion nuevamente");
