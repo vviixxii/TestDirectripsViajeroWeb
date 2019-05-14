@@ -55,11 +55,14 @@ public class DirectripsDataProvider {
 	}
 
 	private static Object[][] getTestObjArray(ITestContext context, int cols[]) throws Exception {
+		
+		String testParam = context.getCurrentXmlTest().getParameter("Browser");
+		
 		String tcName = context.getAllTestMethods()[0].getInstance().getClass().getSimpleName();
 		sheetFile = tcName;
 		ExcelUtils.setExcelFile(filePath, sheetFile);
-		Object[][] testObjArray = ExcelUtils.getTableArraySelected(tcName, cols);
-		Log.info("Parámetros leidos: " + testObjArray.length);
+		Object[][] testObjArray = ExcelUtils.getTableArraySelected(tcName, cols, testParam);
+		Log.info("Filas de Parámetros leidos: " + testObjArray.length);
 		if (testObjArray.length == 0)
 			Log.error("No se leyó ningún datos del archivos Excel, favor de agregarlo.");
 		return (testObjArray);

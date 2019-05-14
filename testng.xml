@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ViajeroWeb Test Suite" parallel="false">
-	<test name="testngTest">
+	<!-- test name="testFireFox">
+	<parameter name="Browser" value="FF" />
 	 	<classes> 		
 	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel" />
-	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel2" />
+	 		<!--  class name="directripsViajeroWeb.TCBusquedaPorHotel2" />
 	 		<class name="directripsViajeroWeb.TCLoginIncorrecto" />
-	 		<class name="directripsViajeroWeb.TCLoginIncorrecto2" />
+	 		<class name="directripsViajeroWeb.TCLoginIncorrecto2" / -->
+	 	</classes>
+ 	</test -->
+ 	<test name="testChrome">
+	<parameter name="Browser" value="CH" />
+	 	<classes> 		
+	 		<class name="directripsViajeroWeb.TCBusquedaPorHotel" />
+	 		<!--  class name="directripsViajeroWeb.TCBusquedaPorHotel2" />
+	 		<class name="directripsViajeroWeb.TCLoginIncorrecto" />
+	 		<class name="directripsViajeroWeb.TCLoginIncorrecto2" / -->
 	 	</classes>
  	</test>
 </suite>

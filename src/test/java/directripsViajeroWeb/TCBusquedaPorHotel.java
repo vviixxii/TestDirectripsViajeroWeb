@@ -9,7 +9,6 @@ import directripsViajeroWeb.core.DirectripsListener;
 import utils.Log;
 
 import static org.testng.Assert.assertFalse;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
@@ -24,12 +23,12 @@ import org.openqa.selenium.*;
 @Listeners(DirectripsListener.class)
 public class TCBusquedaPorHotel extends BaseTest {
 
-	@BeforeMethod
-	public void setUp() {
-		initialization();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		Log.startTestCase(this.getClass().getName());
-	}
+//	@BeforeMethod
+//	public void setUp() {
+//		initialization();
+//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//		Log.startTestCase(this.getClass().getName());
+//	}
 
 	@AfterMethod
 	public void teardown() {
@@ -38,11 +37,19 @@ public class TCBusquedaPorHotel extends BaseTest {
 
 	@Test(dataProvider = "busquedas", dataProviderClass = DirectripsDataProvider.class)
 	public void testBusquedaPorHotel(String... params) throws Exception {
-		try {
+		try { 
+			String browser = params[params.length - 1];
+			initialization(browser);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			Log.startTestCase(this.getClass().getName());
+			
 			driver.get(params[0]);
+			
+//			WebDriverWait wait = new WebDriverWait(driver, 30);
+//			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id=\"mobile-view\"]/app-root/cookies-advice/div/div[1]/a")));
 
 			Log.info("Quita el msg de uso de cookies");
-			driver.findElement(By.xpath(".//*[@id=\"mobile-view\"]/app-root/cookies-advice/div/div[1]/a")).click();
+			driver.findElement(By.xpath(".//*[@id=\"mobile-view\"]/app-root/cookies-advice/div/div[1]/a/img")).click();
 
 			Log.info("Presiona boton iniciar sesion");
 			driver.findElement(By.xpath(".//*[@id=\"registro_cuenta\"]/div/div/button[2]")).click();
@@ -85,11 +92,11 @@ public class TCBusquedaPorHotel extends BaseTest {
 
 			Thread.sleep(5000);
 			Log.info("Regresa a la lista consultada");
-			driver.findElement(By.xpath(".//*[@id=\"wrapper\"]/div/nav/div[1]/a")).click();
+			driver.findElement(By.xpath(".//*[@id=\"wrapper\"]/div/nav/div[1]/a/img")).click();
 
 			Thread.sleep(5000);
 			Log.info("Regresa a pagina principal");
-			driver.findElement(By.xpath(".//*[@id=\"wrapper\"]/div/div[2]/nav/div/a")).click();
+			driver.findElement(By.xpath(".//*[@id=\"wrapper\"]/div/div[2]/nav/div/a/img")).click();
 
 			Thread.sleep(5000);
 			Log.info("Presiona el boton de Perfil");

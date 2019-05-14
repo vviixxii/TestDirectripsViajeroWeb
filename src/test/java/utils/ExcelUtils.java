@@ -36,11 +36,11 @@ public class ExcelUtils {
 		}
 	}
 
-	public static Object[][] getTableArraySelected(String sTestCaseName, int[] cols) throws Exception {
+	public static Object[][] getTableArraySelected(String sTestCaseName, int[] cols, String testParam) throws Exception {
 		String[][] tabArray = null;
 		try {
 			int[] containslRows = getRowContainsTestCase(sTestCaseName, 0);
-			int totalCols = cols.length;
+			int totalCols = cols.length + 1;
 			tabArray = new String[containslRows.length][totalCols];
 			for (int ci = 0; ci < containslRows.length; ci++) {
 				int iTestCaseRow = containslRows[ci];
@@ -49,6 +49,7 @@ public class ExcelUtils {
 					int startCol = cols[col];
 					tabArray[ci][cj] = getCellData(iTestCaseRow, startCol);
 				}
+				tabArray[ci][cj] = testParam;
 			}
 		} catch (FileNotFoundException e) {
 			Log.debug("No existe el archivo de Excel");

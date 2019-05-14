@@ -82,7 +82,6 @@ public class DirectripsListener extends BaseTest implements ITestListener {
 	final int NUM_LINES_STACKTRACE = 5;
 
 	public DirectripsListener() {
-		Log.info(this.getClass().getSimpleName());
 		this.document = new Document();
 		this.throwableMap = new HashMap<Integer, Throwable>();
 		try {
