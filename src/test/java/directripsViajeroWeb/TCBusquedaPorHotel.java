@@ -45,9 +45,6 @@ public class TCBusquedaPorHotel extends BaseTest {
 			
 			driver.get(params[0]);
 			
-//			WebDriverWait wait = new WebDriverWait(driver, 30);
-//			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id=\"mobile-view\"]/app-root/cookies-advice/div/div[1]/a")));
-
 			Log.info("Quita el msg de uso de cookies");
 			driver.findElement(By.xpath(".//*[@id=\"mobile-view\"]/app-root/cookies-advice/div/div[1]/a/img")).click();
 

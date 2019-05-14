@@ -24,12 +24,12 @@ import org.openqa.selenium.*;
 @Listeners(DirectripsListener.class)
 public class TCLoginIncorrecto extends BaseTest {
 
-	@BeforeMethod
-	public void setUp() {
-		initialization();
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
-		Log.startTestCase(this.getClass().getName());
-	}
+//	@BeforeMethod
+//	public void setUp() {
+//		initialization();
+//		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+//		Log.startTestCase(this.getClass().getName());
+//	}
 	
 	@AfterMethod
 	public void teardown() {
@@ -39,6 +39,11 @@ public class TCLoginIncorrecto extends BaseTest {
 	@Test(dataProvider = "minimo", dataProviderClass = DirectripsDataProvider.class, enabled = false)
 	public void testLoginIncorrecto(String... params) throws Exception {
 		try {
+			String browser = params[params.length - 1];
+			initialization(browser);
+			driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+			Log.startTestCase(this.getClass().getName());
+			
 			driver.get(params[0]);
 
 			Log.info("Quita el msg de uso de cookies");

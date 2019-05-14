@@ -24,15 +24,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @Listeners(DirectripsListener.class)
 public class TCLoginIncorrecto2 extends BaseTest {
 
-	
 	WebDriverWait wait;
 
-	@BeforeMethod
-	public void setUp() {
-		initialization();
-		Log.startTestCase(this.getClass().getName());
-	}
-	
+//	@BeforeMethod
+//	public void setUp() {
+//		initialization();
+//		Log.startTestCase(this.getClass().getName());
+//	}
+
 	@AfterMethod
 	public void teardown() {
 		driver.quit();
@@ -41,6 +40,11 @@ public class TCLoginIncorrecto2 extends BaseTest {
 	@Test(dataProvider = "minimo", dataProviderClass = DirectripsDataProvider.class, enabled = false)
 	public void testLoginIncorrecto2(String... params) throws Exception {
 		try {
+
+			String browser = params[params.length - 1];
+			initialization(browser);
+			Log.startTestCase(this.getClass().getName());
+			
 			wait = new WebDriverWait(driver, 30);
 			driver.get(params[0]);
 
