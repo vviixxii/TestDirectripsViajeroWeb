@@ -74,8 +74,11 @@ public class BaseTest {
 //			options.setExperimentalOption("useAutomationExtension", false);
 //			driver = new ChromeDriver(options);
 
+//			System.setProperty("webdriver.chrome.driver", 
+//					"//home//jenkinsserver//node_modules//chromedriver//lib//chromedriver//chromedriver");
 			System.setProperty("webdriver.chrome.driver", 
-					"//home//jenkinsserver//node_modules//chromedriver//lib//chromedriver//chromedriver");
+					"//home//jenkinsserver//chromedriver-v5.0.1-linux-x64//chromedriver");
+			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
