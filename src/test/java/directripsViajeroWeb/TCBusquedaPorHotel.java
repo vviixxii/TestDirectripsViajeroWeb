@@ -112,7 +112,8 @@ public class TCBusquedaPorHotel extends BaseTest {
 			Log.info("No existe el elemento buscado ..... " + e.getMessage());
 			Assert.assertTrue(false, e.getMessage());
 		} finally {
-			driver.quit();
+			if (driver != null)
+				driver.quit();
 		}
 	}
 
