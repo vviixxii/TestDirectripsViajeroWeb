@@ -30,22 +30,22 @@ public class TCBusquedaPorHotel extends BaseTest {
 //		Log.startTestCase(this.getClass().getName());
 //	}
 
-	@AfterMethod
-	public void teardown() {
-		driver.quit();
-	}
+//	@AfterMethod
+//	public void teardown() {
+//		driver.quit();
+//	}
 
 	@Test(dataProvider = "busquedas", dataProviderClass = DirectripsDataProvider.class)
 	public void testBusquedaPorHotel(String... params) throws Exception {
-		try { 
+		try {
 			String browser = params[params.length - 1];
 			Log.info("Browser --> " + browser);
 			initialization(browser);
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			Log.startTestCase(this.getClass().getName());
-			
+
 			driver.get(params[0]);
-			
+
 			Log.info("Quita el msg de uso de cookies");
 			driver.findElement(By.xpath(".//*[@id=\"mobile-view\"]/app-root/cookies-advice/div/div[1]/a/img")).click();
 
@@ -111,7 +111,9 @@ public class TCBusquedaPorHotel extends BaseTest {
 		} catch (NoSuchElementException e) {
 			Log.info("No existe el elemento buscado ..... " + e.getMessage());
 			Assert.assertTrue(false, e.getMessage());
-		} 
+		} finally {
+			driver.quit();
+		}
 	}
 
 	@AfterClass(alwaysRun = true)
