@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import utils.Log;
 
@@ -23,7 +24,8 @@ import utils.Log;
  */
 public class BaseTest {
 
-	public static WebDriver driver;
+//	public static WebDriver driver;
+	public static RemoteWebDriver driver;
 	String propertyFilePath = "config//config.properties";
 	protected Properties prop = new Properties();
 
