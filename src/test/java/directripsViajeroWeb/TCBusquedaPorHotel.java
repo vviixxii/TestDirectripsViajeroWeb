@@ -39,6 +39,7 @@ public class TCBusquedaPorHotel extends BaseTest {
 	public void testBusquedaPorHotel(String... params) throws Exception {
 		try { 
 			String browser = params[params.length - 1];
+			Log.info("Browser --> " + browser);
 			initialization(browser);
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			Log.startTestCase(this.getClass().getName());
